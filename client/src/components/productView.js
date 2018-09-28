@@ -10,18 +10,19 @@ import { fetchProducts } from "../actions";
 class ProductView extends Component {
     constructor(props){
         super(props)
-        // console.log(this.props)
         this.state = {
             products: []
         }
+        
     }
     renderProducts() {
+        console.log(this.props)
         return this.props.products.map(product => {
           return  (
             <div className="col-md-4 product-object" key={product._id}>
                 <div className="float-left"> Category: {product.category} </div>
                 <div className="text-right"> ${product.price} </div>
-                <img className="justify-content-center" src={product.image} alt={product.name}/>
+                <img className="text-center" src={product.image} alt={product.name}/>
                 <h4 className="text-center"> {product.name} </h4>
             </div>
         )  
